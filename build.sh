@@ -5,6 +5,8 @@
 # Corvus build script
 # shellcheck disable=SC1091
 # SC1091: Not following: (error message here)
+# SC2153: Possible Misspelling: MYVARIABLE may not be assigned, but MY_VARIABLE is.
+# SC2155: Declare and assign separately to avoid masking return values
 
 export TZ=UTC
 
