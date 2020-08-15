@@ -102,9 +102,8 @@ fi
 
 #Upload to Drive
 if [ "$UPLOAD" = "YES" ]; then
-    rclone copy -P out/target/product/"${DEVICE}"/Corvus_*.zip gdrive:"${DEVICE}"/stable/"${DEVICE}"
+    rclone copy -P out/target/product/"${DEVICE}"/Corvus_*.zip gdrive:"${DEVICE}"/stable/
     sendMessage "Build Uploaded @ritzz97 send link"
 fi
 
-sendMessage "Build Done, Clearing OUT Dir"
-rm -rf "$OUT"*
+sendMessage "Build Done"
