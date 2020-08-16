@@ -7,6 +7,7 @@ if len(argv) != 2:
     exit(1)
 
 maintainers = {
+    'begonia': 'aashil123',
     'raphael': 'ritzz97',
 }
 
