@@ -13,6 +13,9 @@ maintainers = {
     'X00P': 'Flamefusion',
     'santoni': 'jubayerhimel',
     'violet': 'ShivamKumar2002',
+    'jd2019': 'merser2005',
+    's2': 'merser2005',
+    'tissot': 'Takeshiro',
 }
 
 device = argv[1]
