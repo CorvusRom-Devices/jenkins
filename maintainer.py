@@ -18,6 +18,7 @@ maintainers = {
     'jd2019': 'merser2005',
     's2': 'merser2005',
     'tissot': 'Takeshiro',
+    'X00T': 'pkm774',
 }
 
 device = argv[1]
