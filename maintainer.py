@@ -12,6 +12,7 @@ maintainers = {
     'mido': 'Apon77',
     'X00P': 'Flamefusion',
     'santoni': 'jubayerhimel',
+    'violet': 'ShivamKumar2002',
 }
 
 device = argv[1]
