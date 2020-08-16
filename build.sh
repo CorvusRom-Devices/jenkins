@@ -35,7 +35,7 @@ curl --silent --fail --location review.corvusrom.com >/dev/null || {
 
 # Notify Trigger
 sendMessage "Build Triggered on Jenkins for ${DEVICE}-$BUILD_VARIANT "
-sendMessage "$(/var/lib/jenkins/workspace/corvus-test/jenkins/maintainer.py "$DEVICE")"
+sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE")"
 
 # Repo Init
 repo init -u https://github.com/Corvus-ROM/android_manifest.git -b 10 --no-tags --no-clone-bundle --current-branch
@@ -99,7 +99,7 @@ ccache -M 500G
 export _JAVA_OPTIONS=-Xmx16g
 if mka "$MAKE_TARGET"; then
     sendMessage "${DEVICE} build is done, check [jenkins](${BUILD_URL}) for details!"
-    sendMessage "$(./jenkins/maintainer.py "$DEVICE")"
+    sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE")"
     sendMessage "Build finished successfully! for ${DEVICE}  Uploading Build"
 fi
 
