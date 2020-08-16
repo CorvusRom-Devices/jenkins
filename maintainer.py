@@ -9,6 +9,7 @@ if len(argv) != 2:
 maintainers = {
     'begonia': 'aashil123',
     'raphael': 'ritzz97',
+    'X00P': 'Flamefusion',
 }
 
 device = argv[1]
