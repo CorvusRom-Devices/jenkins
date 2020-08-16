@@ -9,6 +9,7 @@ if len(argv) != 2:
 maintainers = {
     'begonia': 'aashil123',
     'raphael': 'ritzz97',
+    'mido': 'Apon77',
     'X00P': 'Flamefusion',
 }
 
