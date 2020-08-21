@@ -8,6 +8,7 @@ if len(argv) != 2:
 
 maintainers = {
     'begonia': 'aashil123',
+    'enchilada': 'deadmanxxd',
     'davinci': 'meetaditya',
     'ginkgo': 'Introdructor',
     'raphael': 'ritzz97',
