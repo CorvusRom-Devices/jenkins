@@ -103,9 +103,8 @@ if mka "$MAKE_TARGET"; then
     sendMessage "Build finished successfully! for ${DEVICE}  Uploading Build"
 fi
 
-#Upload to Drive
+#Upload to FTP
 if [ "$UPLOAD" = "YES" ]; then
-    rclone copy -P out/target/product/"${DEVICE}"/Corvus_*.zip gdrive:"${DEVICE}"/stable/
     curl  --user  "$REMOTE_USERNAME":"$REMOTE_PASSWORD" --ftp-pasv -T out/target/product/"${DEVICE}"/Corvus_*.zip  ftp://ftp.corvusrom.com/public_html/corvusrom.com/public_html/
     sendMessage "Build Uploaded @ritzz97 send link"
 fi
