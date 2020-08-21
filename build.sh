@@ -54,7 +54,7 @@ fi
 
 # Face Unlock
 if [[ ! -f external/motorola/faceunlock/regenerate/regenerate.sh ]]; then
-    git clone git@github.com:Corvus-ROM/android_external_motorola_faceunlock.git external/motorola/faceunlock
+    git clone git@github.com:Corvus-ROM/android_external_motorola_faceunlock.git external/motorola/faceunlock && bash external/motorola/faceunlock/regenerate/regenerate.sh
 else
     . external/motorola/faceunlock/regenerate/regenerate.sh
 fi
