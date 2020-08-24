@@ -61,9 +61,9 @@ fi
 
 # Build Type
 if [ "$DU_BUILD_TYPE" = "Official" ]; then
-    export DU_BUILD_TYPE=OFFICIAL
+    export DU_BUILD_TYPE=Official
 else
-    export DU_BUILD_TYPE=UNOFFICIAL
+    export DU_BUILD_TYPE=UnOfficial
 fi
 
 # Build
