@@ -105,7 +105,7 @@ export CCACHE_DIR=/var/lib/jenkins/workspace/Corvus/.ccache
 ccache -M 500G
 export _JAVA_OPTIONS=-Xmx16g
 if mka "$MAKE_TARGET"; then
-    sendMessage "${DEVICE} build is done, check [jenkins](${BUILD_URL}) for details!"
+    sendMessage "${DEVICE} build is done, check jenkins (${BUILD_URL}) for details!"
     sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE")"
     sendMessage "Build finished successfully! for ${DEVICE}  Uploading Build"
 fi
