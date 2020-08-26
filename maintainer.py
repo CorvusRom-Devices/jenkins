@@ -20,6 +20,7 @@ maintainers = {
     's2': 'merser2005',
     'tissot': 'Takeshiro',
     'X00T': 'pkm774',
+    'whyred': 'NAHSEEZ',
 }
 
 device = argv[1]
