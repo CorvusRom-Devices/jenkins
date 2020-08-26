@@ -11,6 +11,7 @@ maintainers = {
     'enchilada': 'deadmanxxd',
     'davinci': 'meetaditya',
     'ginkgo': 'Introdructor',
+    'kenzo': 'Azahar123',
     'raphael': 'ritzz97',
     'mido': 'Apon77',
     'X00P': 'Flamefusion',
