@@ -27,6 +27,10 @@ export BUILD_TIME=$(date +%H%M)
 cd ../
 cd corvus
 
+#Remove previous device repo before starting a new build
+rm -rf device/*
+
+
 # Don't start build if gerrit is down
 curl --silent --fail --location review.corvusrom.com >/dev/null || {
     sendMessage "$DEVICE $DU_BUILD_TYPE is being aborted because gerrit is down!"
