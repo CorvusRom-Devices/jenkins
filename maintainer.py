@@ -12,6 +12,7 @@ maintainers = {
     'davinci': 'meetaditya',
     'ginkgo': 'Introdructor',
     'kenzo': 'Azahar123',
+    'potter': 'ZJRDroid',
     'raphael': 'ritzz97',
     'mido': 'Apon77',
     'X00P': 'Flamefusion',
