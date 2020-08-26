@@ -47,7 +47,8 @@ repo init -u https://github.com/Corvus-ROM/android_manifest.git -b 10 --no-tags 
 PARSE_MODE="html" sendMessage "Repo Initialised"
 
 # Repo sync
-PARSE_MODE="html" sendMessage "Starting repo sync. Executing command: time repo sync"
+PARSE_MODE="html" sendMessage "Starting repo sync. Executing command:  repo sync"
+repo forall --ignore-missing -j"$(nproc)" -c "git reset --hard m/10 && git clean -fdx"
 time repo sync -j"$(nproc)" --current-branch --no-tags --no-clone-bundle --force-sync
 
 # Build Variant
