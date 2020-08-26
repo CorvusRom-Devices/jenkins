@@ -26,4 +26,4 @@ maintainers = {
 device = argv[1]
 
 maintainer = maintainers.get(device, 'CorvusJenkinsBot')
-print(f'@{maintainer}  {device} !')
+print(f'@{maintainer} {device}!')
