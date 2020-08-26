@@ -85,6 +85,8 @@ fi
 #Lunch
 set +e
 lunch du_"${DEVICE}"-"${BUILD_TYPE}"
+#call vendorsetup.sh after cloning the device, for including device specific patches
+source build/envsetup.sh
 
 set -e
 
