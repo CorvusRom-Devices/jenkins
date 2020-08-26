@@ -28,7 +28,8 @@ cd ../
 cd corvus
 
 #Remove previous device repo before starting a new build
-rm -rf device/*
+rm -rf device/"$VENDOR"
+rm -rf vendor/"$VENDOR"
 
 
 # Don't start build if gerrit is down
