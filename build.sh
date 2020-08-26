@@ -31,7 +31,6 @@ cd corvus
 rm -rf device/"$VENDOR"
 rm -rf vendor/"$VENDOR"
 
-
 # Don't start build if gerrit is down
 curl --silent --fail --location review.corvusrom.com >/dev/null || {
     sendMessage "$DEVICE $DU_BUILD_TYPE is being aborted because gerrit is down!"
@@ -113,7 +112,10 @@ fi
 
 #Upload to FTP
 if [ "$UPLOAD" = "YES" ]; then
-    curl  --user  "$REMOTE_USERNAME":"$REMOTE_PASSWORD" --ftp-pasv -T out/target/product/"${DEVICE}"/Corvus_*.zip  ftp://ftp.corvusrom.com/public_html/corvusrom.com/public_html/
+    sendMessage "Uploading Build to our Host"
+    curl --ssl -k -T out/target/product/"${DEVICE}"/Corvus_*.zip ftp://ftp.stackcp.com/"${DEVICE}" --user "$REMOTE_USERNAME":"$REMOTE_PASSWORD"
+    sendMessage "Uploading Build to  Osdn"
+    scp -r out/target/product/"${DEVICE}"/Corvus_* corvusos@storage.osdn.net:/storage/groups/c/co/corvusos/"${DEVICE}"
     sendMessage "Build Uploaded @ritzz97 send link"
 fi
 
