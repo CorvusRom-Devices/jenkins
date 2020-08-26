@@ -17,6 +17,7 @@ maintainers = {
     'mido': 'Apon77',
     'X00P': 'Flamefusion',
     'santoni': 'jubayerhimel',
+    'sanders': 'saisamy95',
     'violet': 'ShivamKumar2002',
     'jd2019': 'merser2005',
     's2': 'merser2005',
