@@ -23,6 +23,7 @@ maintainers = {
     's2': 'merser2005',
     'tissot': 'Takeshiro',
     'X00T': 'pkm774',
+    'X00TD': 'pkm774',
     'whyred': 'NAHSEEZ',
 }
 
