@@ -12,6 +12,7 @@ maintainers = {
     'davinci': 'meetaditya',
     'garlic': 'whitebeard_official',
     'ginkgo': 'Introdructor',
+    'guacamole': 'moditji',
     'kenzo': 'Azahar123',
     'potter': 'ZJRDroid',
     'raphael': 'ritzz97',
