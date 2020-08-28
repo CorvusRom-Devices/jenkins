@@ -10,6 +10,7 @@ maintainers = {
     'begonia': 'aashil123',
     'enchilada': 'deadmanxxd',
     'davinci': 'meetaditya',
+    'garlic': 'whitebeard_official',
     'ginkgo': 'Introdructor',
     'kenzo': 'Azahar123',
     'potter': 'ZJRDroid',
