@@ -45,6 +45,12 @@ sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE"
 repo init -u https://github.com/Corvus-ROM/android_manifest.git -b 10 --no-tags --no-clone-bundle --current-branch
 PARSE_MODE="html" sendMessage "Repo Initialised"
 
+#Cleanup local manifest
+source build/envsetup.sh
+if [[ -f .repo/local_manifests/local_corvus.xml ]]; then
+    rm .repo/local_manifests/local_corvus.xml
+fi
+
 # Repo sync
 PARSE_MODE="html" sendMessage "Starting repo sync. Executing command:  repo sync"
 repo forall --ignore-missing -j"$(nproc)" -c "git reset --hard m/10 && git clean -fdx"
@@ -76,10 +82,8 @@ set -e
 export PATH=~/bin:$PATH
 sendMessage "Starting ${DEVICE}-${DU_BUILD_TYPE}-${BUILD_DATE}-${BUILD_TIME}  build, check progress here ${BUILD_URL}"
 
+#Envsetup
 source build/envsetup.sh
-if [[ -f .repo/local_manifests/local_corvus.xml ]]; then
-    rm .repo/local_manifests/local_corvus.xml
-fi
 
 #Lunch
 set +e
