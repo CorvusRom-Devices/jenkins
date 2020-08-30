@@ -24,9 +24,19 @@ maintainers = {
     'jd2019': 'merser2005',
     's2': 'merser2005',
     'tissot': 'Takeshiro',
-    'X00T': 'pkm774',
     'X00TD': 'pkm774',
     'whyred': 'NAHSEEZ',
+    'miatoll': 'Teamsolo1',
+    'vince': 'MahmoudK1000',
+    'dipper': 'jullian14',
+    'wayne': 'RonaldSt',
+    'jasmine_sprout': 'RonaldSt',
+    'lavender': 'Bagualisson',
+    'oneplus3': 'ajithzres',
+    'x2': 'RashedSahaji',
+    'beryllium': 'Saikiran008 and @Reignz3',
+    'phoenix': 'Hard_rock83',
+    
 }
 
 device = argv[1]
