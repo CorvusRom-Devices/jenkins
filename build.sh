@@ -116,11 +116,11 @@ fi
 
 #Upload to FTP
 if [ "$UPLOAD" = "YES" ]; then
-    sendMessage "Uploading Build to our Host"
-    mv out/target/product/"${DEVICE}"/Corvus_*.zip ~/Builds/"$DEVICE"/
     sendMessage "Uploading Build to  Osdn"
     scp -r out/target/product/"${DEVICE}"/Corvus_* corvusos@storage.osdn.net:/storage/groups/c/co/corvusos/"${DEVICE}"
-    sendMessage "Build Uploaded @ritzz97 send link"
+    sendMessage "Moving  Build to h5ai"
+    mv out/target/product/"${DEVICE}"/Corvus_*.zip ~/Builds/"$DEVICE"/
+    sendMessage "Build Uploaded @ritzz97 send pling  link xD"
 fi
 
 sendMessage "Build Done"
