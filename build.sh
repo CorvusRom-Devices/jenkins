@@ -19,6 +19,14 @@ sendMessage() {
 # Set defaults
 MAKE_TARGET="corvus"
 
+# Lets Make Terminal Colorful
+export TERM=xterm
+red=$(tput setaf 1)             #  red
+grn=$(tput setaf 2)             #  green
+blu=$(tput setaf 4)             #  blue
+cya=$(tput setaf 6)             #  cyan
+txtrst=$(tput sgr0)             #  Reset
+
 #Set Date and Time
 export BUILD_DATE=$(date +%Y%m%d)
 export BUILD_TIME=$(date +%H%M)
@@ -38,6 +46,9 @@ sendMessage "Build Triggered on Jenkins for ${DEVICE}-$BUILD_VARIANT "
 sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE")"
 
 # Repo Init
+git config --global user.name "riteshm321" 
+git config --global user.email "riteshm321@gmail.com"
+echo -e ${blu} "[*] Syncing sources Gonna take while" ${txtrst}
 repo init -u https://github.com/Corvus-ROM/android_manifest.git -b 10 --no-tags --no-clone-bundle --current-branch
 PARSE_MODE="html" sendMessage "Repo Initialised"
 
@@ -52,6 +63,7 @@ PARSE_MODE="html" sendMessage "Starting repo sync. Executing command:  repo sync
 repo forall --ignore-missing -j"$(nproc)" -c "git reset --hard m/10 && git clean -fdx"
 time repo sync -j"$(nproc)" --current-branch --no-tags --no-clone-bundle --force-sync
 
+echo -e ${cya} "[*] Syncing sources completed!" ${txtrst}
 # Build Variant
 if [ "$BUILD_VARIANT" = "gapps" ]; then
     export USE_GAPPS=true
@@ -104,6 +116,8 @@ export USE_CCACHE=1
 export CCACHE_DIR=/var/lib/jenkins/workspace/Corvus/.ccache
 ccache -M 500G
 export _JAVA_OPTIONS=-Xmx16g
+echo -e ${blu} "[*] ccache important decrease time!" ${txtrst}
+echo -e ${blu}"[*] Starting the build" ${txtrst}
 if mka "$MAKE_TARGET"; then
     sendMessage "${DEVICE} build is done, check jenkins (${BUILD_URL}) for details!"
     sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE")"
