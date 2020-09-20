@@ -12,6 +12,7 @@ maintainers = {
     'davinci': 'meetaditya',
     'dipper': 'jullian14',
     'enchilada': 'deadmanxxd',
+    'fajita': 'Chandu078',
     'garlic': 'whitebeard_official',
     'ginkgo': 'Introdructor',
     'guacamole': 'moditji',
