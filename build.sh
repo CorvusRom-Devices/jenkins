@@ -116,7 +116,7 @@ if [ "$UPLOAD" = "YES" ]; then
     scp -r out/target/product/"${DEVICE}"/Corvus_* corvusos@storage.osdn.net:/storage/groups/c/co/corvusos/"${DEVICE}"
     sendMessage "Moving  Build to h5ai"
     mv out/target/product/"${DEVICE}"/Corvus_*.zip ~/Builds/"$DEVICE"/
-    sendMessage "Build Uploaded @ritzz97 send pling  link xD"
+    sendMessage "Build Done ritzz97 you can post now"
 fi
 
 sendMessage "Build Done"
