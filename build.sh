@@ -12,7 +12,7 @@ export TZ=UTC
 
 sendMessage() {
     MESSAGE=$1
-    curl -s "https://api.telegram.org/bot${BOT_API_KEY}/sendmessage" --data "text=$MESSAGE&chat_id=-1001179187393" 1>/dev/null
+    curl -s "https://api.telegram.org/bot${BOT_API_KEY}/sendmessage" --data "text=$MESSAGE&chat_id=-1001130083853" 1>/dev/null
     echo -e
 }
 
@@ -59,13 +59,6 @@ else
     export USE_GAPPS=false
 fi
 
-# Face Unlock
-if [[ ! -f external/motorola/faceunlock/regenerate/regenerate.sh ]]; then
-    git clone git@github.com:Corvus-ROM/android_external_motorola_faceunlock.git external/motorola/faceunlock && bash external/motorola/faceunlock/regenerate/regenerate.sh
-else
-    . external/motorola/faceunlock/regenerate/regenerate.sh
-fi
-
 # Build Type
 if [ "$DU_BUILD_TYPE" = "Official" ]; then
     export DU_BUILD_TYPE=Official
@@ -101,9 +94,9 @@ set -e
 # Cache
 export CCACHE_EXEC="$(command -v ccache)"
 export USE_CCACHE=1
-export CCACHE_DIR=/var/lib/jenkins/workspace/Corvus/.ccache
-ccache -M 500G
+ccache -M 75G
 export _JAVA_OPTIONS=-Xmx64g
+export SKIP_ABI_CHECKS=true
 if mka "$MAKE_TARGET"; then
     sendMessage "${DEVICE} build is done, check jenkins (${BUILD_URL}) for details!"
     sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE")"
@@ -114,9 +107,6 @@ fi
 if [ "$UPLOAD" = "YES" ]; then
     sendMessage "Uploading Build to  Osdn"
     scp -r out/target/product/"${DEVICE}"/Corvus_* corvusos@storage.osdn.net:/storage/groups/c/co/corvusos/"${DEVICE}"
-    sendMessage "Moving  Build to h5ai"
-    mv out/target/product/"${DEVICE}"/Corvus_*.zip ~/Builds/"$DEVICE"/
-    sendMessage "Build Done ritzz97 you can post now"
 fi
 
 sendMessage "Build Done"
