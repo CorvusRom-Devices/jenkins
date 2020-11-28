@@ -95,7 +95,7 @@ set -e
 export CCACHE_EXEC="$(command -v ccache)"
 export USE_CCACHE=1
 ccache -M 75G
-export _JAVA_OPTIONS=-Xmx64g
+export _JAVA_OPTIONS=-Xmx16g
 export SKIP_ABI_CHECKS=true
 if mka "$MAKE_TARGET"; then
     sendMessage "${DEVICE} build is done, check jenkins (${BUILD_URL}) for details!"
