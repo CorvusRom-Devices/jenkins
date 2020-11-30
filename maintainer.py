@@ -30,6 +30,7 @@ maintainers = {
     'sanders': 'saisamy95',
     'santoni': 'jubayerhimel',
     'tissot': 'Takeshiro',
+    'tulip': 'jefinhodatnt',
     'vince': 'MahmoudK1000',
     'violet': 'ShivamKumar2002',
     'wayne': 'RonaldSt',
