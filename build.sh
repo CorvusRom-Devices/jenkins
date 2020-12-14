@@ -38,7 +38,7 @@ sendMessage "Build Triggered on Jenkins for ${DEVICE}-$BUILD_VARIANT "
 sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE")"
 
 # Repo Init
-repo init -u https://github.com/Corvus-ROM/android_manifest.git -b 10 --no-tags --no-clone-bundle --current-branch
+repo init -u https://github.com/Corvus-R/android_manifest.git -b 11-ssh --no-tags --no-clone-bundle --current-branch
 PARSE_MODE="html" sendMessage "Repo Initialised"
 
 #Cleanup local manifest
@@ -52,6 +52,9 @@ PARSE_MODE="html" sendMessage "Starting repo sync. Executing command:  repo sync
 repo forall --ignore-missing -j"$(nproc)" -c "git reset --hard m/10 && git clean -fdx"
 time repo sync -j"$(nproc)" --current-branch --no-tags --no-clone-bundle --force-sync
 
+# Clone Vendor 
+git clone git@github.com:Corvus-R/vendor_corvus.git vendor/corvus
+
 # Build Variant
 if [ "$BUILD_VARIANT" = "gapps" ]; then
     export USE_GAPPS=true
@@ -60,23 +63,25 @@ else
 fi
 
 # Build Type
-if [ "$DU_BUILD_TYPE" = "Official" ]; then
-    export DU_BUILD_TYPE=Official
+if [ "$RAVEN_LAIR" = "Official" ]; then
+    export RAVEN_LAIR=Official
+    git clone git@github.com:Corvus-R/.certs .certs
+    export SIGNING_KEYS=.certs
 else
-    export DU_BUILD_TYPE=Unofficial
+    export RAVEN_LAIR=Unofficial
 fi
 
 # Build
 set -e
 export PATH=~/bin:$PATH
-sendMessage "Starting ${DEVICE}-${DU_BUILD_TYPE}-${BUILD_DATE}-${BUILD_TIME}  build, check progress here ${BUILD_URL}"
+sendMessage "Starting ${DEVICE}-${RAVEN_LAIR}-${BUILD_DATE}-${BUILD_TIME}  build, check progress here ${BUILD_URL}"
 
 #Envsetup
 source build/envsetup.sh
 
 #Lunch
 set +e
-lunch du_"${DEVICE}"-"${BUILD_TYPE}"
+lunch corvus_"${DEVICE}"-"${BUILD_TYPE}"
 #call vendorsetup.sh after cloning the device, for including device specific patches
 source build/envsetup.sh
 
@@ -109,4 +114,11 @@ if [ "$UPLOAD" = "YES" ]; then
     scp -r out/target/product/"${DEVICE}"/Corvus_* corvusos@storage.osdn.net:/storage/groups/c/co/corvusos/"${DEVICE}"
 fi
 
-sendMessage "Build Done"
+# Remove Vendor 
+rm -rf vendor/corvus
+if [ "$RAVEN_LAIR" = "Official" ]; then
+      rm -rf .certs
+      sendMessage "Build Done"
+else
+      sendMessage "Build Done"
+fi
