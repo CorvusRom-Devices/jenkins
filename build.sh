@@ -1,14 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Copyright (C) 2020 Ayush Dubey
-# SPDX-License-Identifier: GPL-3.0-only
-# Corvus build script
-# shellcheck disable=SC1091
-# SC1091: Not following: (error message here)
-# SC2153: Possible Misspelling: MYVARIABLE may not be assigned, but MY_VARIABLE is.
-# SC2155: Declare and assign separately to avoid masking return values
-
-export TZ=UTC
+# Colors makes things beautiful
+export TERM=xterm
+red=$(tput setaf 1)             #  red
+grn=$(tput setaf 2)             #  green
+blu=$(tput setaf 4)             #  blue
+cya=$(tput setaf 6)             #  cyan
+txtrst=$(tput sgr0)             #  Reset
 
 sendMessage() {
     MESSAGE=$1
@@ -16,44 +14,73 @@ sendMessage() {
     echo -e
 }
 
-# Set defaults
-MAKE_TARGET="corvus"
-
-#Set Date and Time
-export BUILD_DATE=$(date +%Y%m%d)
-export BUILD_TIME=$(date +%H%M)
-
-# Switch to source directory
-cd ../
-cd corvus
-
-# Don't start build if gerrit is down
-curl --silent --fail --location review.corvusrom.com >/dev/null || {
-    sendMessage "$DEVICE $DU_BUILD_TYPE is being aborted because gerrit is down!"
-    exit 1
+function certs() {
+  echo "Unzipping certs!"
+  echo "$SIGNING_KEYS_ZIP"
+  unzip -jo $SIGNING_KEYS_ZIP "certs/*" -d .certs;
+  export SIGNING_KEYS=.certs;
+  errcode=$?
+  if [ ! $errcode -eq 0 ]; then
+	  echo -e ${red}"[!] Failed to extract signing certs!"${txtrst};
+	  exit $errcode;
+  fi
 }
+if [ $SYNC = yes ]; then
+rm -rf *
 
-# Notify Trigger
-sendMessage "Build Triggered on Jenkins for ${DEVICE}-$BUILD_VARIANT "
-sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE")"
-
-# Repo Init
-repo init -u https://github.com/Corvus-R/android_manifest.git -b 11-ssh --no-tags --no-clone-bundle --current-branch
-PARSE_MODE="html" sendMessage "Repo Initialised"
-
-#Cleanup local manifest
-source build/envsetup.sh
-if [[ -f .repo/local_manifests/local_corvus.xml ]]; then
-    rm .repo/local_manifests/local_corvus.xml
 fi
 
-# Repo sync
-PARSE_MODE="html" sendMessage "Starting repo sync. Executing command:  repo sync"
-repo forall --ignore-missing -j"$(nproc)" -c "git reset --hard m/10 && git clean -fdx"
-time repo sync -j"$(nproc)" --current-branch --no-tags --no-clone-bundle --force-sync
+if [ "$RAVEN_LAIR" = "Official" ]; then
+  export RAVEN_LAIR=Official
+  certs
+else
+  export RAVEN_LAIR=unoffical
+fi
 
+if [ ! -f ~/.ssh/config ]; then
+  mkdir -p ~/.ssh && echo "Host *" > ~/.ssh/config && \
+  	echo " StrictHostKeyChecking no" >> ~/.ssh/config;
+  chmod 400 ~/.ssh/config    
+fi
+
+# Notify Trigger
+sendMessage "$DEVICE 69TH BUILD STARTED GAPPS OR NON GAPPS WHO CARES";
+
+# For repo to work, define git user; preferably bot
+git config --global user.email "singhalaashil@gmail.com"
+git config --global user.name "aashil123"
+
+# Setup ccache
+  export USE_CCACHE=1
+  echo -e ${blu}"[*] CCACHE ENABLED"${txtrst}
+  ccache -M 200G
+
+# Let's get syncing!
+  echo -e ${blu}"[*] Initializing repo"${txtrst};
+  repo init -u https://github.com/Corvus-R/android_manifest -b 11 2> /dev/null;
+  PARSE_MODE="html" sendMessage "Repo Initialised";
+  rm -rf .repo/local_manifests;
+  repo forall --ignore-missing -j"$(nproc)" -c "git reset --hard m/11 && git clean -fdx"
+  echo -e ${blu}"[*] Syncing sources..."${txtrst};
+  PARSE_MODE="html" sendMessage "Starting repo sync. Executing command:  repo sync";
+  repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle
 # Clone Vendor 
-git clone git@github.com:Corvus-R/vendor_corvus.git vendor/corvus
+  GIT_SSH_COMMAND='ssh -i $SSH_PRIV_KEY_FILE -o IdentitiesOnly=yes' git clone git@github.com:Corvus-R/vendor_corvus.git vendor/corvus;
+  echo -e ${cya}"[*] Sync complete!"${txtrst};
+
+# Prepare for cleanup
+source build/envsetup.sh;
+
+# Cleanup
+if [ "$clean" = "yes" ]; then
+  echo -e ${blu}"[*] Running clean job - full"${txtrst};
+  make clean && make clobber
+  echo -e ${grn}"[*] clean job complete"${txtrst};
+else
+  echo -e ${blu}"[*] Running clean job - install"${txtrst};
+  make installclean
+  echo -e ${cya}"[*] make installclean complete"${txtrst};
+fi
 
 # Build Variant
 if [ "$BUILD_VARIANT" = "gapps" ]; then
@@ -62,63 +89,37 @@ else
     export USE_GAPPS=false
 fi
 
-# Build Type
-if [ "$RAVEN_LAIR" = "Official" ]; then
-    export RAVEN_LAIR=Official
-    git clone git@github.com:Corvus-R/.certs .certs
-    export SIGNING_KEYS=.certs
-else
-    export RAVEN_LAIR=Unofficial
-fi
-
-# Build
-set -e
-export PATH=~/bin:$PATH
-sendMessage "Starting ${DEVICE}-${RAVEN_LAIR}-${BUILD_DATE}-${BUILD_TIME}  build, check progress here ${BUILD_URL}"
-
-#Envsetup
-source build/envsetup.sh
-
-#Lunch
-set +e
+# Prepare device sources and build env
 lunch corvus_"${DEVICE}"-"${BUILD_TYPE}"
-#call vendorsetup.sh after cloning the device, for including device specific patches
-source build/envsetup.sh
+source build/envsetup.sh;
 
-set -e
+# Build ROM
+echo -e ${blu}"[*] Starting build..."${txtrst};
+sendMessage "Starting ${DEVICE}-${RAVEN_LAIR}-${BUILD_DATE}-${BUILD_TIME}  build, check progress here ${BUILD_URL}";
+mka corvus;
+build=$(ls -t ${OUT}/Corvus_* | sed -n 2p);
+build_name=$(echo $build | rev | cut -d \/ -f 1 | rev);
 
-# Clean
-if [[ ${CLEAN} =~ ^(clean|deviceclean|installclean)$ ]]; then
-    m "${CLEAN}"
-else
-    rm -rf "${OUT}"*
+
+if [ $? -eq 0 ]; then
+  sendMessage "Build Done"
+  sendMessage "Ritzz, wen u free, give pling link and post on channel"
+  else
+  sendMessage "Build Failed";
+fi
+  
+if [ "$UPLOAD" = "OSDN" ]; then
+    echo -e ${blu}"[*] Uploading build..."${txtrst};
+    sendMessage "Build Will Be available here in few mins for testing only https://osdn.net/projects/corvusos/storage/$DEVICE/$build_name"
+    rsync -e "ssh -o StrictHostKeyChecking=no -i $SSH_PRIV_KEY_FILE" out/target/product/"${DEVICE}"/Corvus_* corvusos@storage.osdn.net:/storage/groups/c/co/corvusos/"${DEVICE}"/  
 fi
 
-set -e
-
-# Cache
-export CCACHE_EXEC="$(command -v ccache)"
-export USE_CCACHE=1
-ccache -M 75G
-export _JAVA_OPTIONS=-Xmx16g
-export SKIP_ABI_CHECKS=true
-if mka "$MAKE_TARGET"; then
-    sendMessage "${DEVICE} build is done, check jenkins (${BUILD_URL}) for details!"
-    sendMessage "$(/var/lib/jenkins/workspace/Corvus/jenkins/maintainer.py "$DEVICE")"
-    sendMessage "Build finished successfully! for ${DEVICE}  Uploading Build"
+if [ "$UPLOAD" = "SF" ]; then
+    echo -e ${blu}"[*] Uploading build..."${txtrst};
+    sendMessage "Build Will Be available here in few mins for testing only https://osdn.net/projects/corvusos/storage/$DEVICE/$build_name"
+    rsync -azP -e ssh out/target/product/"$DEVICE"/Corvus* merser2005@frs.sourceforge.net:/home/frs/project/corvus-os/"$DEVICE"/
 fi
 
-#Upload to FTP
-if [ "$UPLOAD" = "YES" ]; then
-    sendMessage "Uploading Build to  Osdn"
-    scp -r out/target/product/"${DEVICE}"/Corvus_* corvusos@storage.osdn.net:/storage/groups/c/co/corvusos/"${DEVICE}"
-fi
-
-# Remove Vendor 
-rm -rf vendor/corvus
-if [ "$RAVEN_LAIR" = "Official" ]; then
-      rm -rf .certs
-      sendMessage "Build Done"
-else
-      sendMessage "Build Done"
-fi
+echo -e ${grn}"[*] Removing Private Repos"${txtrst};
+rm -rf .certs;
+rm -rf vendor/corvus;
