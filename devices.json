@@ -1,15 +1,19 @@
 {
+  "Xiaomi": {    
     "raphael": {
       "device": "Redmi K20 Pro/Mi 9T Pro",
       "tg_username": "@ritzz97",
       "download": "https://www.pling.com/p/1584050/",
       "tg_support_group": "@corvusraphael"
-    },
-
+    }
+  },
+    
+  "Poco": {    
     "phoenix": {
       "device": "Poco X2",
       "tg_username": "@ZuijinR6",
       "download": "https://www.pling.com/p/1396780/",
       "tg_support_group": "@CorvusPhoenixX2"
     }
+  }      
 }
