@@ -9,6 +9,8 @@ export TERM=xterm
     cya=$(tput setaf 6)             #  cyan
     txtrst=$(tput sgr0)             #  Reset
 
+echo $device > /home/corvus/device
+
 # Sync with latest source
 if [ "${repo_sync}" = "yes" ];
 then
@@ -48,6 +50,16 @@ echo -e ${grn}"CCACHE Cleared"${txtrst};
 fi
 
 rm -rf out/target/product/${device}/Corvus_*.zip #clean rom zip in any case
+
+# Sign corvus builds
+if [ "${sign_builds}" = "yes" ]:
+then
+git clone git@github.com:Corvus-R/.certs.git certs
+export SIGNING_KEYS=certs
+fi
+
+# Ship Official builds
+export RAVEN_LAIR=Official
 
 # Make a vanilla build first
 export USE_GAPPS=false
