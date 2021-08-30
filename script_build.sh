@@ -98,6 +98,31 @@ RZIP="$(ls Corvus_*.zip)"
 fileid=$(gdrive upload --parent 1G5d_sY6GsKIIBrvPac5K_jpTRL2p74dE ${RZIP} | tail -1 | awk '{print $2}')
 echo "https://drive.google.com/file/d/${fileid}/view?usp=drivesdk" > /home/corvus/vanilla_link
 
+# Make OTA json
+name=$(grep ro\.product\.system\.model system/build.prop | cut -d= -f2)
+version_codename=$(grep ro\.corvus\.codename system/build.prop | cut -d= -f2)
+version=$(grep ro\.corvus\.build\.version system/build.prop | cut -d= -f2)
+size=$(stat -c%s $RZIP)
+datetime=$(grep ro\.build\.date\.utc system/build.prop | cut -d= -f2)
+filehash=$(md5sum $RZIP | awk '{ print $1 }')
+maintainer=$(python3 device_data.py ${device} tg_username | sed 's/@//g')
+url=$(python3 device_data.py ${device} download)
+group=$(python3 device_data.py phoenix tg_support_group | sed 's/@//g')
+group_url='https://telegram.dog/$group'
+echo "{" > $device.json
+echo "  \"codename\":\"${device}\"," >> $device.json
+echo "  \"name\":\"${name}\"," >> $device.json
+echo "  \"version_codename\":\"${version_codename}\"," >> $device.json
+echo "  \"version\":\"${version}\"," >> $device.json
+echo "  \"maintainer\":\"${maintainer}\"," >> $device.json
+echo "  \"size\":${size}," >> $device.json
+echo "  \"datetime\":${datetime}," >> $device.json
+echo "  \"filehash\":\"${filehash}\"," >> $device.json
+echo "  \"url\":\"${url}\"," >> $device.json
+echo "  \"group\":\"${group_url}\"" >> $device.json
+echo "}" >> $device.json
+
+cp $device.json /home/corvus/ota/
 cd ../../../../ #fall back to root dir of source
 else
 exit 1
