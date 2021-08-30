@@ -1,19 +1,30 @@
 {
-  "Xiaomi": {    
-    "raphael": {
-      "device": "Redmi K20 Pro/Mi 9T Pro",
-      "tg_username": "@ritzz97",
-      "download": "https://www.pling.com/p/1584050/",
-      "tg_support_group": "@corvusraphael"
+
+  "Rom Generic":{
+    "rom_generic_links": {
+      "changelog": "https://t.me/CorvusScreenshots/205",
+      "tg_support_group": "http://t.me/CorvusCommunityOfficial",
+      "donation":  "https://telegra.ph/Corvus-OS-Donation-Links-02-25",
+      "forums": "https://forums.corvusrom.com/"
     }
   },
-    
-  "Poco": {    
+
+  "Xiaomi": {
+    "raphael": {
+      "device": "Redmi K20 Pro/Mi 9T Pro",
+      "maintainer": "@ritzz97",
+      "download": "https://www.pling.com/p/1584050/",
+      "tg_support_group": "http://t.me/corvusraphael",
+      "changelog": "https://changelogs.corvusrom.com/raphael"
+    }
+  },
+
+  "Poco": {
     "phoenix": {
       "device": "Poco X2",
       "tg_username": "@ZuijinR6",
       "download": "https://www.pling.com/p/1396780/",
       "tg_support_group": "@CorvusPhoenixX2"
     }
-  }      
+  }
 }
