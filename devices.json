@@ -1,6 +1,8 @@
 {
   "Rom Generic":{
     "rom_generic_links": {
+      "version": "v16.8",
+      "version_codename": "Avalon",
       "changelog": "https://t.me/CorvusScreenshots/205",
       "tg_support_group": "http://t.me/CorvusCommunityOfficial",
       "donation":  "https://telegra.ph/Corvus-OS-Donation-Links-02-25",
