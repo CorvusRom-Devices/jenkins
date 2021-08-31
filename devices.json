@@ -54,6 +54,13 @@
   },
 
   "Asus": {
+    "X00TD": {
+      "device": "Zenfone Max Pro M1",
+      "maintainer": "@pkm774",
+      "download": "https://www.pling.com/p/1411412/",
+      "tg_support_group": "https://t.me/CorvusX00T",
+      "changelog": "https://changelogs.corvusrom.com/X00TD"
+    }
   },
 
   "Moto": {
