@@ -38,6 +38,13 @@
       "download": "https://www.pling.com/p/1372062/",
       "tg_support_group": "http://t.me/corvus_lavender",
       "changelog": "https://changelogs.corvusrom.com/lavender"
+    },
+    "whyred": {
+      "device": "Redmi Note 5 Pro",
+      "maintainer":"@The_Santy",
+      "download": "https://www.pling.com/p/1375302/",
+      "tg_support_group": "http://t.me/corvuswhyred",
+      "changelog": "https://changelogs.corvusrom.com/whyred"
     }
   },
 
