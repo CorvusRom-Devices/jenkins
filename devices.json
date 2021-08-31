@@ -39,6 +39,13 @@
       "tg_support_group": "http://t.me/corvus_lavender",
       "changelog": "https://changelogs.corvusrom.com/lavender"
     },
+    "sakura": {
+      "device": "Redmi 6 Pro",
+      "maintainer":"@YadavMohit19",
+      "download": "https://www.pling.com/p/1479849",
+      "tg_support_group": "http://t.me/CorvusSakura",
+      "changelog": "https://changelogs.corvusrom.com/sakura"
+    },
     "whyred": {
       "device": "Redmi Note 5 Pro",
       "maintainer":"@The_Santy",
