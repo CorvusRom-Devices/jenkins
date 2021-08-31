@@ -18,6 +18,13 @@
       "tg_support_group": "http://t.me/corvusraphael",
       "changelog": "https://changelogs.corvusrom.com/raphael"
     },
+    "laurel_sprout": {
+      "device": "MI A3",
+      "maintainer": "@H3M3L",
+      "download": "https://www.pling.com/p/1526454/",
+      "tg_support_group": "http://t.me/corvus_laurel_sprout",
+      "changelog": "https://changelogs.corvusrom.com/laurel_sprout"
+    },
     "ysl": {
       "device": "ysl",
       "maintainer": "@uchihasushmit",
