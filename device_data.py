@@ -4,7 +4,7 @@ import json
 import requests
 
 def get_device_details(device):
-    url = 'https://raw.githubusercontent.com/Rpingat/corvus_jenkins/main/devices.json'
+    url = 'https://raw.githubusercontent.com/CorvusRom-Devices/jenkins/main/devices.json'
     req = requests.get(url)
     data = json.loads(req.text)
     for k in data:
