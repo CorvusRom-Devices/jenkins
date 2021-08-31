@@ -52,6 +52,13 @@
       "download": "https://www.pling.com/p/1375302/",
       "tg_support_group": "http://t.me/corvuswhyred",
       "changelog": "https://changelogs.corvusrom.com/whyred"
+    },
+    "apollo": {
+      "device": "Mi 10T/Mi 10T Pro",
+      "maintainer":"@sewa2k",
+      "download": "https://www.pling.com/p/1544948",
+      "tg_support_group": "http://t.me/corvusapollon",
+      "changelog": "https://changelogs.corvusrom.com/apollo"
     }
   },
 
