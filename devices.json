@@ -1,5 +1,4 @@
 {
-
   "Rom Generic":{
     "rom_generic_links": {
       "changelog": "https://t.me/CorvusScreenshots/205",
@@ -22,9 +21,10 @@
   "Poco": {
     "phoenix": {
       "device": "Poco X2",
-      "tg_username": "@ZuijinR6",
+      "maintainer": "@ZuijinR6",
       "download": "https://www.pling.com/p/1396780/",
-      "tg_support_group": "@CorvusPhoenixX2"
+      "tg_support_group": "https://t.me/CorvusPhoenixX2",
+      "changelog": "https://changelogs.corvusrom.com/phoenix"
     }
   }
 }
