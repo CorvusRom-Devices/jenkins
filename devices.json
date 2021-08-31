@@ -65,6 +65,13 @@
   },
 
   "OnePlus": {
+    "kebab": {
+      "device": "OnePlus 8T",
+      "maintainer": "@Viper_1057",
+      "download": "https://www.pling.com/p/1579785/",
+      "tg_support_group": "https://t.me/corvuskebab",
+      "changelog": "https://changelogs.corvusrom.com/kebab"
+    }
   },
 
   "Asus": {
