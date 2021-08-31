@@ -22,7 +22,14 @@
       "download": "https://www.pling.com/p/1372381/",
       "tg_support_group": "http://t.me/corvusysl",
       "changelog": "https://changelogs.corvusrom.com/ysl"
-    }    
+    },
+    "lavender": {
+      "device": "Redmi Note 7",
+      "maintainer":"@Lucifer_morning_star_96",
+      "download": "https://www.pling.com/p/1372062/",
+      "tg_support_group": "http://t.me/corvus_lavender",
+      "changelog": "https://changelogs.corvusrom.com/lavender"
+    }
   },
 
   "Poco": {
