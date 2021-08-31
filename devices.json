@@ -14,7 +14,13 @@
       "maintainer": "@ritzz97",
       "download": "https://www.pling.com/p/1584050/",
       "tg_support_group": "http://t.me/corvusraphael",
-      "changelog": "https://changelogs.corvusrom.com/raphael"
+      "changelog": "https://changelogs.corvusrom.com/raphael",
+    "lavender": {
+      "device": "Redmi Note 7",
+      "maintainer":"@Lucifer_morning_star_96",
+      "download": "https://www.pling.com/p/1372062/",
+      "tg_support_group": "http://t.me/corvus_lavender",
+      "changelog": "https://changelogs.corvusrom.com/lavender"
     }
   },
 
