@@ -42,6 +42,13 @@
   },
 
   "Poco": {
+    "gram": {
+      "device": "Poco M2 pro",
+      "maintainer": "@Kuruin",
+      "download": "https://www.pling.com/p/1421725/",
+      "tg_support_group": "https://t.me/corvusosmiatoll",
+      "changelog": "https://changelogs.corvusrom.com/gram"
+    },
     "phoenix": {
       "device": "Poco X2",
       "maintainer": "@ZuijinR6",
