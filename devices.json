@@ -15,7 +15,14 @@
       "download": "https://www.pling.com/p/1584050/",
       "tg_support_group": "http://t.me/corvusraphael",
       "changelog": "https://changelogs.corvusrom.com/raphael"
-    }
+    },
+    "ysl": {
+      "device": "ysl",
+      "maintainer": "@uchihasushmit",
+      "download": "https://www.pling.com/p/1372381/",
+      "tg_support_group": "http://t.me/corvusysl",
+      "changelog": "https://changelogs.corvusrom.com/ysl"
+    }    
   },
 
   "Poco": {
