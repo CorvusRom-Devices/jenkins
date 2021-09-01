@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Export some variables
+user=corvus
+OUT_PATH="out/target/product/${device}"
+ROM_ZIP=Corvus_*.zip
+folderid=""
+
+ROOMSERVICE_DEFAULT_BRANCH=$rsb
+
 # Colors makes things beautiful
 export TERM=xterm
 
@@ -9,16 +17,15 @@ export TERM=xterm
     cya=$(tput setaf 6)             #  cyan
     txtrst=$(tput sgr0)             #  Reset
 
-echo $device > /home/corvus/device
+echo $device > /home/$user/current_device
 
-# Sync with latest source
+# Reset trees & Sync with latest source
 if [ "${repo_sync}" = "yes" ];
 then
 repo sync --force-sync --force-remove-dirty --no-tags --no-clone-bundle
 echo -e ${grn}"Fresh Sync"${txtrst}
 fi
 
-# Reset trees & sync with latest source
 if [ "${repo_sync}" = "clean" ];
 then
 rm -rf .repo/local_manifests
@@ -32,7 +39,7 @@ then
 echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-export CCACHE_DIR=/home/corvus/ccache/${device}
+export CCACHE_DIR=/home/$user/ccache/${device}
 ccache -M 40G
 ccache -o compression=true
 fi
@@ -40,7 +47,7 @@ fi
 if [ "${use_ccache}" = "clean" ];
 then
 export CCACHE_EXEC=$(which ccache)
-export CCACHE_DIR=/home/corvus/ccache/${device}
+export CCACHE_DIR=/home/$user/ccache/${device}
 ccache -C
 export USE_CCACHE=1
 ccache -M 40G
@@ -49,10 +56,10 @@ wait
 echo -e ${grn}"CCACHE Cleared"${txtrst};
 fi
 
-rm -rf out/target/product/${device}/Corvus_*.zip #clean rom zip in any case
+rm -rf ${OUT_PATH}/${ROM_ZIP} #clean rom zip in any case
 
 # Sign corvus builds
-if [ "${sign_builds}" = "yes" ]:
+if [ "${sign_builds}" = "yes" ];
 then
 git clone git@github.com:Corvus-R/.certs.git certs
 export SIGNING_KEYS=certs
@@ -61,7 +68,6 @@ fi
 # Ship Official builds
 export RAVEN_LAIR=Official
 
-# Make a vanilla build first
 export USE_GAPPS=false
 
 # Time to build
@@ -79,7 +85,6 @@ wait
 echo -e ${cya}"OUT dir from your repo deleted"${txtrst};
 fi
 
-# Make Installclean
 if [ "${make_clean}" = "installclean" ];
 then
 make installclean
@@ -87,15 +92,18 @@ wait
 echo -e ${cya}"Images deleted from OUT dir"${txtrst};
 fi
 
-echo "Vanilla" > /home/corvus/build_type
+source build/envsetup.sh
+echo "Vanilla" > /home/$user/build_type
 make bacon -j$(nproc --all)
 
-if [ `ls out/target/product/${device}/Corvus_*.zip 2>/dev/null | wc -l` != "0" ]; then
-RESULT=Success
-cd out/target/product/${device}
-RZIP="$(ls Corvus_*.zip)"
+export SSHPASS=""
 
-fileid=$(gdrive upload --parent 1G5d_sY6GsKIIBrvPac5K_jpTRL2p74dE ${RZIP} | tail -1 | awk '{print $2}')
+if [ `ls ${OUT_PATH}/${ROM_ZIP} 2>/dev/null | wc -l` != "0" ]; then
+RESULT=Success
+cd ${OUT_PATH}
+RZIP="$(ls ${ROM_ZIP})"
+
+fileid=$(gdrive upload --parent ${folderid} ${RZIP} | tail -1 | awk '{print $2}')
 echo "https://drive.google.com/file/d/${fileid}/view?usp=drivesdk" > /home/corvus/vanilla_link
 
 # Make OTA json
@@ -105,10 +113,9 @@ version=$(grep ro\.corvus\.build\.version system/build.prop | cut -d= -f2)
 size=$(stat -c%s $RZIP)
 datetime=$(grep ro\.build\.date\.utc system/build.prop | cut -d= -f2)
 filehash=$(md5sum $RZIP | awk '{ print $1 }')
-maintainer=$(python3 device_data.py ${device} tg_username | sed 's/@//g')
-url=$(python3 device_data.py ${device} download)
-group=$(python3 device_data.py phoenix tg_support_group | sed 's/@//g')
-group_url='https://telegram.dog/$group'
+maintainer=$(python3 /home/$user/builder/device_data.py ${device} maintainer | sed 's/@//g')
+url=$(python3 /home/$user/builder/device_data.py ${device} download)
+group=$(python3 /home/$user/builder/device_data.py ${device} tg_support_group)
 echo "{" > $device.json
 echo "  \"codename\":\"${device}\"," >> $device.json
 echo "  \"name\":\"${name}\"," >> $device.json
@@ -119,11 +126,18 @@ echo "  \"size\":${size}," >> $device.json
 echo "  \"datetime\":${datetime}," >> $device.json
 echo "  \"filehash\":\"${filehash}\"," >> $device.json
 echo "  \"url\":\"${url}\"," >> $device.json
-echo "  \"group\":\"${group_url}\"" >> $device.json
+echo "  \"group\":\"${group}\"" >> $device.json
 echo "}" >> $device.json
-
-cp $device.json /home/corvus/ota/
+cp $device.json /home/$user/builder/
 cd ../../../../ #fall back to root dir of source
+
+   ~/sshpass -e sftp -oBatchMode=no -b - user@frs.thunderserver.in << !
+     cd /ravi
+     put $RZIP
+     put /home/$user/builder/$device.json
+     bye
+!
+
 else
 exit 1
 fi
@@ -132,8 +146,8 @@ fi
 if [ "${RESULT}" = "Success" ];
 then
 export USE_GAPPS=true
-rm -rf out/target/product/${device}/Corvus_*.zip #clean rom zip in any case
-echo "Gapps" > /home/corvus/build_type
+rm -rf ${OUT_PATH}/${ROM_ZIP} #clean rom zip in any case
+echo "Gapps" > /home/$user/build_type
 source build/envsetup.sh
 lunch corvus_"${device}"-"${build_type}"
 make installclean
@@ -141,10 +155,17 @@ if ! make bacon -j$(nproc --all); then
   exit 1
 fi
 
-cd out/target/product/${device}
-RZIP="$(ls out/target/product/${device}/Corvus_*.zip)"
-fileid=$(gdrive upload --parent 1G5d_sY6GsKIIBrvPac5K_jpTRL2p74dE ${RZIP} | tail -1 | awk '{print $2}')
-echo "https://drive.google.com/file/d/${fileid}/view?usp=drivesdk" > /home/corvus/gapps_link
+cd ${OUT_PATH}
+RZIP="$(ls ${ROM_ZIP})"
+
+fileid=$(gdrive upload --parent ${folderid} ${RZIP} | tail -1 | awk '{print $2}')
+echo "https://drive.google.com/file/d/${fileid}/view?usp=drivesdk" > /home/$user/gapps_link
+
+   ~/sshpass -e sftp -oBatchMode=no -b - user@frs.thunderserver.in << !
+     cd /ravi
+     put $RZIP
+     bye
+!
 else
 exit 1
 fi
