@@ -128,6 +128,13 @@
   },
   
   "Moto": {
+     "Payton": {
+      "device": "Moto X4",
+      "maintainer": "@yukki159",
+      "download": "https://www.pling.com/p/1480512",
+      "tg_support_group": "https://t.me/yukkiofficialroms",
+      "changelog": "https://changelogs.corvusrom.com/payton"
+    }
   },
 
   "GSI": {
