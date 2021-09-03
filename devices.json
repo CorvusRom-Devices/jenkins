@@ -95,6 +95,11 @@
   },
 
   "Realme": {
+      "device": "RMX2001",
+      "maintainer": "@tlas01",
+      "download": "https://www.pling.com/p/1543855",
+      "tg_support_group": "http://t.me/CorvusRMX2001",
+      "changelog": "https://changelogs.corvusrom.com/RMX2001"
   },
 
   "Lenovo": {
