@@ -1,1 +1,1 @@
-# corvus_jenkins
+# Official Jenkins Machine for Corvus
