@@ -97,7 +97,20 @@
       "download": "https://www.pling.com/p/1372060/",
       "tg_support_group": "https://t.me/CorvusBeryllium",
       "changelog": "https://changelogs.corvusrom.com/beryllium"
-      
+    },
+    "surya": {
+      "device": "Poco X3",
+      "maintainer": "@thepsambit",
+      "download": "https://www.pling.com/p/1465144/",
+      "tg_support_group": "https://t.me/corvussurya",
+      "changelog": "https://changelogs.corvusrom.com/surya"
+    },
+    "vayu": {
+      "device": "Poco X3 Pro",
+      "maintainer": "@thepsambit",
+      "download": "https://www.pling.com/p/1578738/",
+      "tg_support_group": "https://t.me/CorvusVayu",
+      "changelog": "https://changelogs.corvusrom.com/vayu"
     }
   },
 
