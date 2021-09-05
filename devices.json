@@ -73,6 +73,13 @@
       "download": "https://www.pling.com/p/",
       "tg_support_group": "http://t.me/corvusmojito",
       "changelog": "https://changelogs.corvusrom.com/mojito"
+    },
+    "mido": {
+      "device": "Redmi Note 4",
+      "maintainer": "@Jrchintu",
+      "download": "https://www.pling.com/p/1372054/",
+      "tg_support_group": "http://t.me/corvusmido",
+      "changelog": "https://changelogs.corvusrom.com/mido"
     }
   },
 
