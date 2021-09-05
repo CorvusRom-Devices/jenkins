@@ -104,6 +104,16 @@
     }
   },
 
+  "LeEco": {
+    "s2": {
+      "device": "LeEco Le 2/Le S3",
+      "maintainer": "@victor10520",
+      "download": "https://www.pling.com/p/1590060/",
+      "tg_support_group": "https://t.me/corvusjd2019",
+      "changelog": "https://changelogs.corvusrom.com/s2"
+    }
+  },
+  
   "Lenovo": {
     "jd2019": {
       "device": "Lenovo Z5s",
@@ -111,6 +121,20 @@
       "download": "https://www.pling.com/p/1590052/",
       "tg_support_group": "https://t.me/corvusjd2019",
       "changelog": "https://changelogs.corvusrom.com/jd2019"
+    },
+    "kunlun2": {
+      "device": "Lenovo Z6 Lite",
+      "maintainer": "@victor10520",
+      "download": "https://www.pling.com/p/1590054",
+      "tg_support_group": "https://t.me/corvusjd2019",
+      "changelog": "https://changelogs.corvusrom.com/kunlun2"
+    },
+    "kunlun2_row": {
+      "device": "Lenovo K10 Note",
+      "maintainer": "@victor10520",
+      "download": "https://www.pling.com/p/1590057",
+      "tg_support_group": "https://t.me/corvusjd2019",
+      "changelog": "https://changelogs.corvusrom.com/kunlun2_row"
     }
   },
 
