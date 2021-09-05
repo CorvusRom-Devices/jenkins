@@ -105,6 +105,13 @@
   },
 
   "Lenovo": {
+    "jd2019": {
+      "device": "Lenovo Z5s",
+      "maintainer": "@victor10520",
+      "download": "https://www.pling.com/p/1590052/",
+      "tg_support_group": "https://t.me/corvusjd2019",
+      "changelog": "https://changelogs.corvusrom.com/jd2019"
+    }
   },
 
   "OnePlus": {
