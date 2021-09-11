@@ -18,6 +18,13 @@
       "tg_support_group": "http://t.me/corvusraphael",
       "changelog": "https://changelogs.corvusrom.com/raphael"
     },
+    "alioth": {
+      "device": "Xiaomi Poco F3 / Xiaomi Mi 11X / Redmi K40",
+      "maintainer": "@sukeeratsg",
+      "download": "https://www.pling.com/p/temp/",
+      "tg_support_group": "https://t.me/corvusalioth",
+      "changelog": "https://changelogs.corvusrom.com/alioth"
+    },
     "laurel_sprout": {
       "device": "MI A3",
       "maintainer": "@H3M3L",
