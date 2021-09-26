@@ -80,6 +80,13 @@
       "download": "https://www.pling.com/p/",
       "tg_support_group": "http://t.me/corvusmojito",
       "changelog": "https://changelogs.corvusrom.com/mojito"
+    },
+    "ginkgo": {
+      "device": "Redmi Note 8",
+      "maintainer": "@Introdructor",
+      "download": "https://www.pling.com/p/1378207#files-panel",
+      "tg_support_group": "http://t.me/CorvusGinkgo",
+      "changelog": "https://changelogs.corvusrom.com/ginkgo"
     }
   },
 
