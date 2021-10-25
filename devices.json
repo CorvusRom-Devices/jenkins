@@ -150,6 +150,13 @@
       "tg_support_group": "https://t.me/CorvusCPH1859",
       "changelog": "https://changelogs.corvusrom.com/cph1859"
     },
+    "RMX1851": {
+      "device": "Realme 3 Pro",
+      "maintainer":"@Nikhil7001",
+      "download": "https://www.pling.com/p/1401875",
+      "tg_support_group": "https://t.me/CorvusRMX1851",
+      "changelogs": "https://changelogs.corvusrom.com/RMX1851"
+    },
     "RMX1921": {
       "device": "Realme XT",
       "maintainer": "@Bava7325",
