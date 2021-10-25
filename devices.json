@@ -18,6 +18,20 @@
       "tg_support_group": "http://t.me/corvusraphael",
       "changelog": "https://changelogs.corvusrom.com/raphael"
     },
+    "alioth": {
+      "device": "Xiaomi Poco F3 / Xiaomi Mi 11X / Redmi K40",
+      "maintainer": "@sukeeratsg",
+      "download": "https://www.pling.com/p/temp/",
+      "tg_support_group": "https://t.me/corvusalioth",
+      "changelog": "https://changelogs.corvusrom.com/alioth"
+    },
+    "miatoll": {
+      "device": "Redmi Note 9S / Redmi Note 9 Pro India / Redmi Note 9 Pro Global / Redmi Note 9 Pro Max / POCO M2 Pro",
+      "maintainer": "@Kuruin",
+      "download": "https://www.pling.com/p/1421725/",
+      "tg_support_group": "https://t.me/corvusosmiatoll",
+      "changelog": "https://changelogs.corvusrom.com/miatoll"
+    },
     "laurel_sprout": {
       "device": "MI A3",
       "maintainer": "@H3M3L",
@@ -80,6 +94,13 @@
       "download": "https://www.pling.com/p/1372054/",
       "tg_support_group": "http://t.me/corvusmido",
       "changelog": "https://changelogs.corvusrom.com/mido"
+    },
+    "ginkgo": {
+      "device": "Redmi Note 8",
+      "maintainer": "@Introdructor",
+      "download": "https://www.pling.com/p/1378207#files-panel",
+      "tg_support_group": "http://t.me/CorvusGinkgo",
+      "changelog": "https://changelogs.corvusrom.com/ginkgo"
     }
   },
 
@@ -100,7 +121,7 @@
     },
     "juice": {
       "device": "Poco M3 / Redmi 9T",
-      "maintainer": "@johnpaulpatigas",
+      "maintainer": "@kituwa",
       "download": "https://www.pling.com/p/1543242/",
       "tg_support_group": "https://t.me/corvusjuice",
       "changelog": "https://changelogs.corvusrom.com/juice"
@@ -135,6 +156,20 @@
       "download": "https://www.pling.com/p/1396064/",
       "tg_support_group": "https://t.me/CorvusCPH1859",
       "changelog": "https://changelogs.corvusrom.com/cph1859"
+    },
+    "RMX1851": {
+      "device": "Realme 3 Pro",
+      "maintainer":"@Nikhil7001",
+      "download": "https://www.pling.com/p/1401875",
+      "tg_support_group": "https://t.me/CorvusRMX1851",
+      "changelogs": "https://changelogs.corvusrom.com/RMX1851"
+    },
+    "RMX1921": {
+      "device": "Realme XT",
+      "maintainer": "@Bava7325",
+      "download": "https://www.pling.com/p/1541295",
+      "tg_support_group": "https://t.me/CorvusRMX1921",
+      "changelog": "https://changelogs.corvusrom.com/RMX1921"
     }
   },
 
@@ -206,6 +241,13 @@
       "download": "https://www.pling.com/p/1480512",
       "tg_support_group": "https://t.me/yukkiofficialroms",
       "changelog": "https://changelogs.corvusrom.com/payton"
+    },
+    "Sanders": {
+      "device": "Moto G5S Plus",
+      "maintainer": "@saisamy95",
+      "download": "https://www.pling.com/p/1403961",
+      "tg_support_group": "https://t.me/corvussanders",
+      "changelog": "https://changelogs.corvusrom.com/sanders"
     }
   },
 
