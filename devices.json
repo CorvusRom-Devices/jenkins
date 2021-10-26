@@ -66,6 +66,13 @@
       "download": "https://www.pling.com/p/1590109/",
       "tg_support_group": "http://t.me/corvuswhyred",
       "changelog": "https://changelogs.corvusrom.com/whyred"
+      },
+      "payton": {
+      "device": "Moto X4",
+      "maintainer":"@Yukki159",
+      "download": "https://www.pling.com/p/1590074/",
+      "tg_support_group": "https://t.me/CorvusPayton159",
+      "changelog": "https://changelogs.corvusrom.com/payton"
     },
     "apollo": {
       "device": "Mi 10T/Mi 10T Pro",
