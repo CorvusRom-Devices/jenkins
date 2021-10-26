@@ -81,6 +81,13 @@
       "tg_support_group": "http://t.me/corvusviolet",
       "changelog": "https://changelogs.corvusrom.com/violet"
     },
+    "begonia": {
+      "device": "Redmi Note 8 Pro",
+      "maintainer": "@thepsambit",
+      "download": "https://www.pling.com/p/1590115/",
+      "tg_support_group": "http://t.me/corvusbegonia",
+      "changelog": "https://changelogs.corvusrom.com/begonia"
+    },
     "mojito": {
       "device": "Redmi Note 10",
       "maintainer": "@johnpaulpatigas",
