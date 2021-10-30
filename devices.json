@@ -115,6 +115,13 @@
       "download": "https://www.pling.com/p/1378207#files-panel",
       "tg_support_group": "http://t.me/CorvusGinkgo",
       "changelog": "https://changelogs.corvusrom.com/ginkgo"
+    },
+      "tissot": {
+      "device": "Mi A1",
+      "maintainer": "@HyperNotAjitX97",
+      "download": "https://www.pling.com/p/1630564/",
+      "tg_support_group": "https://t.me/corvustissot",
+      "changelog": "https://changelogs.corvusrom.com/tissot"
     }
   },
 
