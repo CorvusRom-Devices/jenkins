@@ -39,6 +39,13 @@
       "tg_support_group": "http://t.me/corvus_laurel_sprout",
       "changelog": "https://changelogs.corvusrom.com/laurel_sprout"
     },
+    "tissot": {
+      "device": "MI A1",
+      "maintainer": "@HyperNotAjitX97",
+      "download": "https://www.pling.com/p/1630451/",
+      "tg_support_group": "https://t.me/corvustissot",
+      "changelog": "https://changelogs.corvusrom.com/tissot"
+    },
     "ysl": {
       "device": "Xiaomi Redmi Y2/S2",
       "maintainer": "@uchihasushmit",
