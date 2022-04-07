@@ -13,8 +13,8 @@
   "Xiaomi": {
     "raphael": {
       "device": "Redmi K20 Pro/Mi 9T Pro",
-      "maintainer": "@ritzz97",
-      "download": "https://www.pling.com/p/1631562/",
+      "maintainer": "@irongfly",
+      "download": "https://download.corvusrom.com/?dir=raphael/oss_vendor",
       "tg_support_group": "http://t.me/corvusraphael",
       "changelog": "https://changelogs.corvusrom.com/raphael"
     },
