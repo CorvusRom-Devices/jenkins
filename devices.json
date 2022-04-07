@@ -20,8 +20,8 @@
     },
     "alioth": {
       "device": "Xiaomi Poco F3 / Xiaomi Mi 11X / Redmi K40",
-      "maintainer": "@sukeeratsg",
-      "download": "https://www.pling.com/p/1631201/",
+      "maintainer": "@InsomniacTech, @Roxor007",
+      "download": "https://download.corvusrom.com/?dir=alioth",
       "tg_support_group": "https://t.me/corvusalioth",
       "changelog": "https://changelogs.corvusrom.com/alioth"
     },
