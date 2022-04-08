@@ -26,9 +26,9 @@
       "changelog": "https://changelogs.corvusrom.com/alioth"
     },
     "miatoll": {
-      "device": "Redmi Note 9S / Redmi Note 9 Pro India / Redmi Note 9 Pro Global / Redmi Note 9 Pro Max / POCO M2 Pro",
+      "device": "Xiaomi SD720G Devices",
       "maintainer": "@Kuruin",
-      "download": "https://www.pling.com/p/1631383/",
+      "download": "https://downloads.corvusrom.com/?dir=miatoll",
       "tg_support_group": "https://t.me/corvusosmiatoll",
       "changelog": "https://changelogs.corvusrom.com/miatoll"
     },
