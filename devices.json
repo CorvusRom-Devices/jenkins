@@ -129,6 +129,13 @@
       "download": "https://downloads.corvusrom.com/?dir=sweet",
       "tg_support_group": "https://t.me/CorvusSweet",
       "changelog": "https://changelogs.corvusrom.com/sweet"
+    },
+      "haydn": {
+      "device": "Mi 11X Pro/K40 Pro+/Mi 11i",
+      "maintainer": "@ritzz97",
+      "download": "https://downloads.corvusrom.com/?dir=haydn",
+      "tg_support_group": "https://t.me/CorvusHaydn",
+      "changelog": "https://changelogs.corvusrom.com/haydn"
     }
   },
 
