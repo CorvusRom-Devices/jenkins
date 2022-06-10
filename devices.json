@@ -227,6 +227,13 @@
       "tg_support_group": "https://t.me/CorvusSpaced",
       "changelog": "https://changelogs.corvusrom.com/spaced"
     }
+    "RM6785": {
+      "device": "Realme 6/6i(Indian)/6s/7/Narzo/Narzo 20 Pro/Narzo 30 4G",
+      "maintainer": "@PAAiiN",
+      "download": "https://downloads.corvusrom.com/?dir=RM6785",
+      "tg_support_group": "https://t.me/CorvusRM6785",
+      "changelogs": "https://changelogs.corvusrom.com/RM6785"
+    }
   },
 
   "LeEco": {
@@ -238,7 +245,7 @@
       "changelog": "https://changelogs.corvusrom.com/s2"
     }
   },
-  
+
   "Lenovo": {
     "jd2019": {
       "device": "Lenovo Z5s",
