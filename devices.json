@@ -219,6 +219,13 @@
       "download": "https://downloads.corvusrom.com/?dir=RMX1971",
       "tg_support_group": "https://t.me/CorvusRMX1971",
       "changelog": "https://changelogs.corvusrom.com/RMX1971"
+    },
+    "spaced": {
+      "device": "Realme 8i",
+      "maintainer": "pritish",
+      "download": "https://downloads.corvusrom.com/?dir=spaced",
+      "tg_support_group": "https://t.me/CorvusSpaced",
+      "changelog": "https://changelogs.corvusrom.com/spaced"
     }
   },
 
