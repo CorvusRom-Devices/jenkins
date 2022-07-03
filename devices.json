@@ -268,6 +268,13 @@
       "tg_support_group": "https://t.me/corvusjd2019",
       "changelog": "https://changelogs.corvusrom.com/kunlun2_row"
     }
+     "zippo": {
+      "device": "Lenovo Z6 Pro",
+      "maintainer": "@kanstmablason",
+      "download": "https://downloads.corvusrom.com/?dir=zippo",
+      "tg_support_group": "https://t.me/corvuszippo",
+      "changelog": "https://changelogs.corvusrom.com/zippo"
+    }
   },
 
   "OnePlus": {
