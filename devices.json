@@ -248,25 +248,39 @@
   
   "Lenovo": {
     "jd2019": {
-      "device": "Lenovo Z5s",
+      "device": "Lenovo Z5s (OSS vendor)",
       "maintainer": "@victor10520",
-      "download": "https://downloads.corvusrom.com/?dir=jd2019",
+      "download": "https://downloads.corvusrom.com/?dir=jd2019/oss-vendor",
       "tg_support_group": "https://t.me/corvusjd2019",
       "changelog": "https://changelogs.corvusrom.com/jd2019"
     },
+     "jd2019p": {
+      "device": "Lenovo Z5s (ZUI vendor)",
+      "maintainer": "@victor10520",
+      "download": "https://downloads.corvusrom.com/?dir=jd2019/zui-vendor",
+      "tg_support_group": "https://t.me/corvusjd2019",
+      "changelog": "https://changelogs.corvusrom.com/jd2019p"
+    },
     "kunlun2": {
-      "device": "Lenovo Z6 Lite",
+      "device": "Lenovo Z6 Lite (OSS vendor)",
       "maintainer": "@victor10520",
       "download": "https://downloads.corvusrom.com/?dir=kunlun2/kunlun2",
       "tg_support_group": "https://t.me/corvusjd2019",
       "changelog": "https://changelogs.corvusrom.com/kunlun2"
     },
     "kunlun2_row": {
-      "device": "Lenovo K10 Note",
+      "device": "Lenovo K10 Note (OSS vendor)",
       "maintainer": "@victor10520",
       "download": "https://downloads.corvusrom.com/?dir=kunlun2/kunlun2_row",
       "tg_support_group": "https://t.me/corvusjd2019",
       "changelog": "https://changelogs.corvusrom.com/kunlun2_row"
+    },
+      "kunlun2p": {
+      "device": "Lenovo K10N/Z6L (ZUI vendor)",
+      "maintainer": "@victor10520",
+      "download": "https://downloads.corvusrom.com/?dir=kunlun2/kunlun2p",
+      "tg_support_group": "https://t.me/corvusjd2019",
+      "changelog": "https://changelogs.corvusrom.com/kunlun2p"
     },
      "zippo": {
       "device": "Lenovo Z6 Pro",
