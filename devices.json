@@ -336,5 +336,15 @@
       "tg_support_group": "https://t.me/CorvusGSI",
       "changelog": "https://changelogs.corvusrom.com/phhgsi"
     }
+  },
+  
+  "LGE": {
+    "flashlmdd": {
+      "device": "LG V50 ThinQ",
+      "maintainer": "@anht3889",
+      "download": "https://downloads.corvusrom.com/?dir=flashlmdd",
+      "tg_support_group": "https://t.me/CorvusFlashlmdd",
+      "changelog": "https://changelogs.corvusrom.com/flashlmdd"
+    }
   }
 }
