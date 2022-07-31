@@ -233,6 +233,13 @@
       "download": "https://downloads.corvusrom.com/?dir=RM6785",
       "tg_support_group": "https://t.me/CorvusRM6785",
       "changelog": "https://changelogs.corvusrom.com/RM6785"
+    },
+    "RMX2020": {
+      "device": "Realme C3/Narzo 10A",
+      "maintainer": "@CoolDude6942",
+      "download": "https://downloads.corvusrom.com/?dir=RMX2020",
+      "tg_support_group": "https://t.me/CorvusRMX2020",
+      "changelog": "https://changelogs.corvusrom.com/RMX2020"
     }
   },
 
