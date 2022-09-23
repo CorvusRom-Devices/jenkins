@@ -154,6 +154,13 @@
       "tg_support_group": "https://t.me/CorvusPhoenixX2",
       "changelog": "https://changelogs.corvusrom.com/phoenix"
     },
+    "munch": {
+      "device": "Poco F4",
+      "maintainer": "@ritzz97",
+      "download": "https://downloads.corvusrom.com/?dir=munch",
+      "tg_support_group": "https://t.me/CorvusMunch",
+      "changelog": "https://changelogs.corvusrom.com/munch"
+    },
     "juice": {
       "device": "Poco M3 / Redmi 9T",
       "maintainer": "@nobara10",
