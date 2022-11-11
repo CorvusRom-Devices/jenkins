@@ -46,6 +46,13 @@
       "tg_support_group": "http://t.me/corvusysl",
       "changelog": "https://changelogs.corvusrom.com/ysl"
     },
+    "veux": {
+      "device": "Redmi Note 11 Pro 5G/ Poco X4 Pro 5G",
+      "maintainer":"@semialex16",
+      "download": "https://downloads.corvusrom.com/?dir=veux",
+      "tg_support_group": "http://t.me/CorvusVeux",
+      "changelog": "https://changelogs.corvusrom.com/veux"
+    },
     "lavender": {
       "device": "Redmi Note 7",
       "maintainer":"@MukulSharma06175",
