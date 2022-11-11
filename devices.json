@@ -311,7 +311,24 @@
       "changelog": "https://changelogs.corvusrom.com/zippo"
     }
   },
-
+  
+ "Google": {
+    "cheetah": {
+      "device": "Pixel 7 Pro",
+      "maintainer": "@HurtCopain",
+      "download": "https://downloads.corvusrom.com/?dir=cheetah",
+      "tg_support_group": "https://t.me/CorvusPantah",
+      "changelog": "https://changelogs.corvusrom.com/cheetah"
+    },
+    "panther": {
+      "device": "Pixel 7",
+      "maintainer": "@HurtCopain",
+      "download": "https://downloads.corvusrom.com/?dir=panther",
+      "tg_support_group": "https://t.me/CorvusPantah",
+      "changelog": "https://changelogs.corvusrom.com/panther"
+    }    
+  },
+  
   "OnePlus": {
     "kebab": {
       "device": "OnePlus 8T",
