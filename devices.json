@@ -102,6 +102,13 @@
       "tg_support_group": "http://t.me/corvusmojito",
       "changelog": "https://changelogs.corvusrom.com/mojito"
     },
+    "veux": {
+      "device": "Redmi Note 11 Pro 5G/ Poco X4 Pro 5G",
+      "maintainer": "@semialex16",
+      "download": "https://www.pling.com/p/",
+      "tg_support_group": "http://t.me/CorvusVeux",
+      "changelog": "https://changelogs.corvusrom.com/veux"
+    },
     "mido": {
       "device": "Redmi Note 4",
       "maintainer": "@Jrchintu",
