@@ -267,6 +267,16 @@
     }
   },
   
+    "Sony": {
+    "pdx206": {
+      "device": "Xperia 5 II",
+      "maintainer": "@SpectreDev",
+      "download": "https://downloads.corvusrom.com/?dir=pdx206",
+      "tg_support_group": "https://t.me/CorvusPDX206",
+      "changelog": "https://changelogs.corvusrom.com/pdx206"
+    }
+  },
+  
   "Lenovo": {
     "jd2019": {
       "device": "Lenovo Z5s (OSS vendor)",
