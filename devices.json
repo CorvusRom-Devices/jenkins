@@ -353,7 +353,14 @@
       "download": "https://downloads.corvusrom.com/?dir=lemonkebab",
       "tg_support_group": "https://t.me/corvuslemonades",
       "changelog": "https://changelogs.corvusrom.com/lemonkebab"
-    }    
+    },
+    "avicii": {
+      "device": "OnePlus Nord",
+      "maintainer": "@Snippetguy",
+      "download": "https://downloads.corvusrom.com/?dir=avicii/gapps",
+      "tg_support_group": "https://t.me/CorvusAvicii",
+      "changelog": "https://changelogs.corvusrom.com/avicii"
+    }
   },
 
   "Asus": {
