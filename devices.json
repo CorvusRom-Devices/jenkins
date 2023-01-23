@@ -74,13 +74,6 @@
       "tg_support_group": "http://t.me/corvuswhyred",
       "changelog": "https://changelogs.corvusrom.com/whyred"
       },
-      "payton": {
-      "device": "Moto X4",
-      "maintainer":"@Yukki159",
-      "download": "https://www.pling.com/p/1628941/",
-      "tg_support_group": "https://t.me/CorvusPayton159",
-      "changelog": "https://changelogs.corvusrom.com/payton"
-    },
     "apollo": {
       "device": "Mi 10T/Mi 10T Pro",
       "maintainer":"@sewa2k",
@@ -380,6 +373,13 @@
       "download": "https://www.pling.com/p/1632862",
       "tg_support_group": "https://t.me/corvussanders",
       "changelog": "https://changelogs.corvusrom.com/sanders"
+    },
+    "payton": {
+      "device": "Moto X4",
+      "maintainer":"@Yukki159",
+      "download": "https://www.pling.com/p/1628941/",
+      "tg_support_group": "https://t.me/CorvusPayton159",
+      "changelog": "https://changelogs.corvusrom.com/payton"
     }
   },
 
